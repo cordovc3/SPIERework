@@ -1,0 +1,342 @@
+<html>
+<head>
+  <title>FAKE SPIE</title>
+  <link rel="stylesheet" type="text/css" href="home.css">
+  <link rel="stylesheet" type="text/css" href="common.css">
+  <link rel="stylesheet" type="text/css" href="http://ct1.addthis.com/static/r07/widget113.css" media="all">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
+  <style>
+  #l_col, #r_col{
+    width: 16%;
+    float:left;
+    margin: 2%;
+  }
+  #main_content{
+    width: 56%;
+    float: left;
+    margin: 2%;
+  }
+  #modal-nav{
+    cursor:pointer;
+  }
+  #modal-nav a:hover{
+    color:#a00b10;
+  }
+   </style>
+</head>
+<body>
+  <div id="topbar">
+    <div class="border"></div>
+    <div class="menubar">
+      <table cellspacing="0" cellpadding="0" border="0" width="100%" class="headertable">
+        <tbody>
+          <tr>
+          <td align="left" id="topbar_account">
+              <a href="#" class="item">Create an account</a> 
+            | <a href="#" class="item">Sign in</a>
+            <span></span>
+          </td>
+          <td align="right">
+              <a href="#" class="item">about SPIE</a>
+            | <a href="#" class="item">contact us</a>
+            | <a href="#" class="item">help</a>
+            | <a href="#" class="item">shopping cart</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div id="page">
+    <div id="header">
+      <span>
+        <a href="#">
+          <img src="http://spie.org/images/wt_o/brand.jpg" border="0" alt="SPIE - The International Society of Optics and Photonics">
+        </a>
+      </span>
+      <span class="searchpos">
+        <form autocomplete="off" action="#" name="search">
+          <input id="searchtext" class="textfld" type="text" name="Ntt" value="" maxlength="256">
+          <span style="position:relative; top:-3px;">
+            <a class="searchbutton">SEARCH</a>
+          </span>
+          <input type="hidden" name="Dy" value="1">
+          <input type="hidden" name="Nty" value="1">
+          <input type="hidden" name="Nrpp" value="20">
+        </form>
+      </span>
+      <div id="nav">
+        <ul id="navmenu">
+        <li id="navhome" class="home">Home</li>
+        <li id="navconferences" class="conferences">Conferences + Exhibitions </li>
+        <li id="navpubs" class="pubs selected">Publications </li>
+        <li id="naveducation" class="education">Education </li>
+        <li id="navmember" class="member">Membership </li>
+        <li id="navindustry" class="industry">Industry Resources </li>
+        <li id="navcareercenter" class="careercenter">Career Center </li>
+        <li id="navnewsroom" class="newsroom">News + Videos </li>
+
+        </ul>
+        <span id="menudiv" class="navtext" style="visibility: hidden; top: 201px; left: 897px;">
+          <table cellpadding="0" cellspacing="0" border="0" id="navtable">
+            <tbody>
+              <tr valign="top">
+                <td>
+                  <ul>
+                    <li class="boldlink">SPIE.TV</li>
+                    <li style="margin-top:10px;">Astronomy</li>
+                    <li>Biomedical Optics &amp; Medical Imaging</li>
+                    <li>Defense &amp; Security</li>
+                    <li>Electronic Imaging &amp; Signal Processing</li>
+                    <li>Illumination &amp; Displays</li>
+                    <li>Lasers &amp; Sources</li>
+                  </ul>
+                </td>
+                <td>
+                  <div><br></div>
+                  <ul>
+                    <li>Micro/Nano Lithography</li>
+                    <li style="margin-top:10px;">Nanotechnology</li>
+                    <li>Optical Design &amp; Engineering</li>
+                    <li>Optoelectronics &amp; Communications</li>
+                    <li>Remote Sensing</li>
+                    <li>Sensing &amp; Measurement</li>
+                    <li>Solar &amp; Alternative Energy</li>
+                  </ul>
+                  <ul>
+                    <li class="boldlink">Sign up for Newsroom E-Alerts</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </span>
+      </div>
+      <table cellspacing="0" cellpadding="0" border="0" id="contenttable" width="600">
+        <tbody>
+          <tr>
+            <td valign="top" align="left" style="padding-top: 17px;">
+            <table cellpadding="0" cellspacing="0" border="0" height="100%">
+            <tbody>
+              <tr>
+                <!--BEGIN LEFT NAV-->
+                <td id="leftnav" valign="top">
+                  <div class="container">
+                    <ul>
+                      <li>Conference Proceedings</li>
+                      <li>Journals</li>
+                      <li>SPIE Digital Library</li>
+                      <li>Books</li>
+                      <li class="leftsubnav">
+                        <div class="level1">Books on Sale</div>
+                        <div class="level1">Field Guides</div>
+                        <div class="level1">Tutorial Texts</div>
+                        <div class="level1">Monographs &amp; Handbooks</div>
+                        <div class="level1">Milestone Series</div>
+                        <div class="level1">eBooks</div>
+                        <div class="level1">Publications Catalog</div>
+                      </li>
+                      <li>Collections</li>
+                      <li>Open Access</li>
+                      <li>Contact SPIE Publications</li>
+                      <li class="optin">
+                        <a href="#">
+                           Subscribe to receive free<br>New Titles Updates
+                          </a>
+                      </li>
+                    </ul>
+                  </div>
+                </td>
+                <td valign="top" width="4">
+                  <img src="http://spie.org/images/spacer.gif" width="4" height="4">
+                </td>
+                <td width="100%" valign="top">
+                  <span></span>
+                  <table width="696" id="jrightcolumn" height="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                      <tr>
+                        <td valign="top" width="472" class="centerCol">
+                          <a href="#" style="margin-left:12px;"></a>
+                          <div class="printEmail centerColElement">
+                            <a href="#" rel="nofollow">
+                              <img name="print" src="http://spie.org/images/global/btn_printpage_out.gif" width="25" height="25" border="0" alt="Print Page" class="btnPrint">
+                            </a>
+                            <a href="mailto:?subject=SPIE.org : Publications : Product Detail&amp;body=EMAIL BODY" onmouseover="document.email.src='http://spie.org/images/global/btn_emailpage_over.gif';" onmouseout="document.email.src='http://spie.org/images/global/btn_emailpage_out.gif';">
+                              <img name="email" src="http://spie.org/images/global/btn_emailpage_out.gif" width="25" height="25" border="0" alt="Email Page" title="Email Page">
+                            </a>
+                            <img src="http://spie.org/images/clear.gif" width="15" height="1">
+                            <a href="#">
+                              <img src="http://spie.org/images/global/addthisservice.gif" width="25" height="25" border="0" alt="">
+                            </a>
+                          </div>
+                          <div class="centerColElement">
+                            <div>
+                              <div style="float:left;">
+
+                                <!-- CHANGE ME TO CHANGE THE BOOK IMAGE -->
+                                <!-- DEFAULT: http://spie.org/Images/Graphics/VolumeCovers/PM229.jpg -->
+                                <a href="modal.html" id="modal"><img src="http://199.48.195.103/Public/PM229.jpg" width="168" height="240" alt="Stray Light Analysis and Control" title="Stray Light Analysis and Control" style="padding-right:10px;"></a>
+                              </div>
+                            <div style="float:left; width:450px;">
+                              <div class="pubtype">
+                                          SPIE Press Book
+                                          <p></p>
+                              </div>
+                              <h1 class="title_Publications" style="margin:5px 0;">Stray Light Analysis and Control </h1>
+                            </div>
+                              <form method="get" action="#" id="frm1000980" name="frm1000980">
+                                <input type="hidden" id="fuseaction" name="fuseaction" value="cartadditem">
+                                <input type="hidden" id="product_id" name="product_id" value="1000980">
+                                <input type="hidden" id="redir" name="redir" value="x648.xml"><input type="hidden" id="ID" name="ID" value="x648">
+                                <input type="hidden" name="origin_id" id="origin_id" value="x646">
+                                <div class="publicationDesc" style="float:left; width:450px;">
+                                  <p>Author(s): <b><a href="http://spie.org/app/profiles/viewer.aspx?profile=BKRRRG">Eric Fest</a></b></p>
+
+                                          Published: <b>27 March 2013</b>;
+                                          228 pages;
+                                          Softcover<br>
+                                        ISBN: <b>9780819493255</b><br>
+                                    Volume: <b>PM229</b><br>
+                                </div>
+                                <p style="padding-top:7px; float:left; width:450px;">
+                                              Member: <b>$47.00</b><br>
+                                              Non-member: <b>$55.00</b>
+                                      </p>
+                                          <p style="padding-top:7px; float:left; width:450px;"><input type="hidden" name="format" id="format" value="Softcover">
+                                            <a class="button" href="#">Add to cart</a>
+                                        </p>
+                                <p></p>
+                              </form>
+                              <div style="clear:both; margin:10px 0; padding-top: 20px; border-bottom:1px solid #999;"></div>
+                              <div class="textBlock">
+                                <p>Stray light is defined as unwanted light in an optical system, a familiar concept for anyone who has taken a photograph with the sun in or near their camera's field of view. In a low-cost consumer camera, stray light may be only a minor annoyance, but in a space-based telescope, it can result in the loss of data worth millions of dollars. It is imperative that optical system designers understand its consequences on system performance and adapt the design process to control it.</p>
+
+                                <p>This book addresses stray light terminology, radiometry, and the physics of stray light mechanisms, such as surface roughness scatter and ghost reflections. The most-efficient ways of using stray light analysis software packages are included. The book also demonstrates how the basic principles are applied in the design, fabrication, and testing phases of optical system development.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td valign="top" width="4">
+                          <img src="http://spie.org/images/spacer.gif" width="4" height="4">
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="padding:1px 0 30px 0;">
+            <div id="pagefooter">
+              <div class="copyright">
+                Copyright © 
+                <script language="Javascript">
+                  var now = new Date();
+                  document.write(now.getFullYear());
+                </script>2013
+                SPIE
+              </div>
+              <div class="links">
+                <a href="#">About SPIE</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="#">Author Information</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="#">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="#">Sitemap</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="#" target="_blank">SPIEDigitalLibrary.org</a>
+              </div>
+              <ul>
+              <li><a href="#"><img src="http://spie.org/images/global/blog-icon-20.jpg" border="0"></a></li>
+              <li><a href="#"><img src="http://spie.org/images/global/facebook-icon-20.jpg" border="0"></a></li>
+              <li><a href="#"><img src="http://spie.org/images/global/linkedin-icon-20.jpg" border="0"></a></li>
+              <li><a href="#"><img src="http://spie.org/images/global/twitter-icon-20.jpg" border="0"></a></li>
+              <li><a href="#"><img src="http://spie.org/images/global/youTube-icon-20.jpg" border="0"></a></li>
+              <li><a href="#"><img src="http://spie.org/images/global/rss-icon-20.jpg" border="0"></a></li>
+              </ul>
+            </div>
+          </div>
+        </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div id="diag" style="display:none;"></div>
+</body>
+</html>
+
+<script>
+$(document).ready(function(){
+  var url = 'https://dl.dropboxusercontent.com/u/1190752/PM225.pdf';
+  PDFJS.disableWorker = true;
+
+  var pdfDoc = null,
+      pageNum = 1,
+      scale = 0.8,
+      canvas = document.getElementById('document'),
+      ctx = canvas.getContext('2d');
+
+  function renderPage(num) {
+    // Using promise to fetch the page
+    pdfDoc.getPage(num).then(function(page) {
+      var viewport = page.getViewport(scale);
+      canvas.height = $(window).height() - ($(window).height() * 0.05);
+      canvas.width = $(window).width() - ($(window).width() * 0.05) * 0.60;
+      viewport.height = canvas.height;
+      viewport.width = canvas.width;
+
+      // Render PDF page into canvas context
+      var renderContext = {
+        canvasContext: ctx,
+        viewport: viewport
+      };
+      page.render(renderContext);
+    });
+  }
+
+  PDFJS.getDocument(url).then(function getPdfHelloWorld(_pdfDoc) {
+    pdfDoc = _pdfDoc;
+    $("#loading").hide();
+    $("#document").show();
+    renderPage(pageNum);
+  });
+});
+
+function showPDF(){
+  $("#document").show();
+  $("#preface").hide();
+  $("#toc").hide();
+}
+function showPreface(){
+  $("#document").hide();
+  $("#preface").show();
+  $("#toc").hide(); 
+}
+function showTOC(){
+  $("#document").hide();
+  $("#preface").hide();
+  $("#toc").show();
+}
+$("#modal").click(function(e) {
+  e.preventDefault();
+  $("#diag").load("modal.html",function() {
+    $("#dialog-modal").dialog({
+      width: $(window).width() - ($(window).width() * 0.05) - 100,
+      height: $(window).height() - ($(window).height() * 0.05) - 100,
+      dialogClass: 'alert',
+      modal: true,
+      open: function (event, ui) {
+        //hide toc and preface until they are asked for
+        $("#toc").hide();
+        $("#preface").hide();
+        $("#dialog-modal").css("overflow", "hidden");
+        $("#main_content").css("overflow", "auto");
+        $("#main_content").css("height", $(window).height() - ($(window).height() * 0.05));
+        $(this).show();
+        //renderPage(1);
+      }
+    });
+  });
+});
+</script>
