@@ -55,6 +55,12 @@
     padding: 5px 10px 15px;
     background-color:#F4F4F8;
   }
+  .msg_head span{
+    float:right;
+  }
+  .selectedBar{
+    background-color: #AAA;
+  }
   </style>
 </head>
 <body>
@@ -247,7 +253,7 @@
                                 <p>This book addresses stray light terminology, radiometry, and the physics of stray light mechanisms, such as surface roughness scatter and ghost reflections. The most-efficient ways of using stray light analysis software packages are included. The book also demonstrates how the basic principles are applied in the design, fabrication, and testing phases of optical system development.</p>
                               </div>
                               <div class="msg_list">
-                                <p class="msg_head">Preface</p>
+                                <p class="msg_head">Preface <span class="arrow-up">&#9658;</span><span class="arrow-down">&#9660;</span></p>
                                 <div class="msg_body">
                                   <p></p><dd><b>Preface</b></dd><p></p>
                                   <p>In 1741, the great Swiss mathematician Leonhard Euler was asked by King Frederick the Great of Prussia to write a tutorial on natural philosophy and science for his niece, the Princess of Anhalt-Dessau. Euler agreed and began writing the tutorial as a series of letters to the Princess, about one a week, for nearly 250 weeks. These letters were eventually published as a collection and became some of the first popular science writing.</p>
@@ -259,11 +265,11 @@
                                   <p><i>Eric Fest<br>Tucson, AZ<br>February 2013</i></p>
 
                                 </div>
-                                <p class="msg_head">Document Preview</p>
+                                <p class="msg_head">Document Preview <span class="arrow-up">&#9658;</span><span class="arrow-down">&#9660;</span></p>
                                 <div class="msg_body">
                                   orem ipsum dolor sit amet, consectetuer adipiscing elit orem ipsum dolor sit amet, consectetuer adipiscing elit
                                 </div>
-                                <p class="msg_head">Table of Contents</p>
+                                <p class="msg_head">Table of Contents <span class="arrow-up">&#9658;</span><span class="arrow-down">&#9660;</span></p>
                                 <div class="msg_body">
                                   <h3>Table of Contents</h3>
                                   <p>
@@ -513,9 +519,19 @@
 <script>
 $(document).ready(function(){
   $(".msg_body").hide();
+  $(".arrow-down").hide();
   //toggle the componenet with class msg_body
   $(".msg_head").click(function(){
-    $(this).next(".msg_body").slideToggle(600);
+    $(this).next(".msg_body").slideToggle(600,function(){
+      $(this).find(".arrow-up, .arrow-down").toggle();
+      $(".msg_head").each(function(){
+        $(this).removeClass("selectedTab");
+      });
+      if($(this).next(".msg_body").is(':visible')){
+        alert("visible");
+        $(this).addClass("selectedBar");  
+      }
+    });
   });
   $(".msg_body").click(function(){
     //$(this).slideToggle(600);
