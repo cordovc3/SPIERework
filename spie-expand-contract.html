@@ -522,16 +522,14 @@ $(document).ready(function(){
   $(".arrow-down").hide();
   //toggle the componenet with class msg_body
   $(".msg_head").click(function(){
-    $(this).next(".msg_body").slideToggle(600,function(){
-      $(this).find(".arrow-up, .arrow-down").toggle();
-      $(".msg_head").each(function(){
-        $(this).removeClass("selectedTab");
-      });
-      if($(this).next(".msg_body").is(':visible')){
-        alert("visible");
-        $(this).addClass("selectedBar");  
-      }
+    $(this).next(".msg_body").slideToggle(600);
+    $(this).find(".arrow-up, .arrow-down").toggle();
+
+    $(".msg_head").each(function(){
+      $(this).removeClass("selectedBar");
     });
+    $(this).addClass("selectedBar");
+
   });
   $(".msg_body").click(function(){
     //$(this).slideToggle(600);
