@@ -9,6 +9,11 @@
   <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
   <script type="text/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
   <style>
+  body {
+     height:100%;
+     margin:0;
+     padding:0;
+  }
   #l_col, #r_col{
     width: 16%;
     float:left;
@@ -25,7 +30,13 @@
   #modal-nav a:hover{
     color:#a00b10;
   }
-   </style>
+  .ui-widget-overlay{
+    opacity: 0.4;
+  }
+  .ui-dialog-titlebar{
+    visibility: hidden;
+  }
+  </style>
 </head>
 <body>
   <div id="topbar">
@@ -263,6 +274,9 @@
     </div>
   </div>
   <div id="diag" style="display:none;"></div>
+  <div id="overlay">
+     <div></div>
+  </div>
 </body>
 </html>
 
@@ -307,17 +321,21 @@ function showPDF(){
   $("#document").show();
   $("#preface").hide();
   $("#toc").hide();
+
 }
 function showPreface(){
   $("#document").hide();
   $("#preface").show();
-  $("#toc").hide(); 
+  $("#toc").hide();
+  $("#loading").hide();
 }
 function showTOC(){
   $("#document").hide();
   $("#preface").hide();
   $("#toc").show();
+  $("#loading").hide();
 }
+
 $("#modal").click(function(e) {
   e.preventDefault();
   $("#diag").load("modal.html",function() {
@@ -326,13 +344,15 @@ $("#modal").click(function(e) {
       height: $(window).height() - ($(window).height() * 0.05) - 100,
       dialogClass: 'alert',
       modal: true,
+      draggable: false,
+      resizable: false,
       open: function (event, ui) {
         //hide toc and preface until they are asked for
         $("#toc").hide();
         $("#preface").hide();
         $("#dialog-modal").css("overflow", "hidden");
         $("#main_content").css("overflow", "auto");
-        $("#main_content").css("height", $(window).height() - ($(window).height() * 0.05));
+        $("#main_content").css("height", $(window).height() - ($(window).height() * 0.05)-200);
         $(this).show();
         //renderPage(1);
       }
