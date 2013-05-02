@@ -1,5 +1,5 @@
-MVC with Pauyman (sp?)
-===========
+MVC with Paymuan 
+
 [charles note: not sure exactly how to structure this but this is my best guess.]
 
 Ingeniux: Flat File XML
@@ -51,5 +51,5 @@ helpsers: Write to response stream
 add @helper and @functions
 
 @sections  script  \___________bundle
-		   style   /           bundle
-		   meta
+	   style   /           bundle
+	   meta
