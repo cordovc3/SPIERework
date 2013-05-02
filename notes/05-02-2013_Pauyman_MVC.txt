@@ -1,0 +1,55 @@
+MVC with Pauyman (sp?)
+===========
+[charles note: not sure exactly how to structure this but this is my best guess.]
+
+Ingeniux: Flat File XML
+	XSLS transformations
+	
+Global Routes: Global.asax
+	yep nope
+	LESS - CSS preprocessor
+	
+// used so that ssl cet warnings wont show  up
+	also important for FF aurora
+	int? is a nullable int
+	
+* - wildcard in routing
+browsers - 6 concurrent connections [chazz note: i don't know what this means]
+
+merged and minified CSS and JS using bunding system
+	global.asax:appstart
+	
+Style bundle (~/css/shared) = inclue all dirs [c note: I think we need a bit more here? I thought it was ("~/css/shared", "*.css") for example?]
+	render it wtih @razor
+	
+iTransform + JSmin + CSSmin
+
+site control:
+	build model and render page
+	*STRONGLY TYPE*
+
+Magic strings - Dynamic object (like viewbag)
+	Late binding:
+		@model dynamic
+		since you don't know if it is cms or not, change up infor with dynamic razor
+
+build model - OVERRIDE ME
+	int? debug = nullable int
+	
+	call base.load()
+	MVVM to build a view model
+	LC - left centered [?]
+	
+	layouts: "~/views/shared/_________
+	 ^^^ lets you choose page layouts
+	 
+	nav class (in models)
+	
+enum.parse
+
+helpsers: Write to response stream
+add @helper and @functions
+
+@sections  script  \___________bundle
+		   style   /           bundle
+		   meta
