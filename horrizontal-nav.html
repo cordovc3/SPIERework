@@ -1,0 +1,553 @@
+<html>
+<head>
+  <title>FAKE SPIE</title>
+  <link rel="stylesheet" type="text/css" href="css/home.css">
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <link rel="stylesheet" type="text/css" href="http://ct1.addthis.com/static/r07/widget113.css" media="all">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <script type="text/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
+  <style>
+  body {
+     height:100%;
+     margin:0;
+     padding:0;
+  }
+  #l_col, #r_col{
+    width: 16%;
+    float:left;
+    margin: 2%;
+  }
+  #main_content{
+    width: 56%;
+    float: left;
+    margin: 2%;
+  }
+  #modal-nav{
+    cursor:pointer;
+  }
+  #modal-nav a:hover{
+    color:#a00b10;
+  }
+  .ui-widget-overlay{
+    opacity: 0.4;
+  }
+  .ui-dialog-titlebar{
+    visibility: hidden;
+  }
+  .msg_list p {
+    padding: 1em;
+  }
+  .msg_list {
+    margin: 0px;
+    padding: 0px;
+    width: 650px;
+  }
+  .msg_head {
+    padding: 5px 10px;
+    cursor: pointer;
+    position: relative;
+    background-color:#e2e2e2;
+    margin:1px;
+  }
+  .msg_body {
+    padding: 5px 10px 15px;
+    background-color:#F4F4F8;
+  }
+  .msg_head span{
+    float:right;
+  }
+  .selectedBar{
+    background-color: #AAA;
+  }
+  #topnav{
+    padding-top: 10px !important;
+    font-family: Arial, Helvetica, sans-serif;
+    display: table;
+  }
+  #topNav li{
+    display:table-cell;
+    vertical-align:middle;
+    list-style-type: none;
+    width: 150px;
+  }
+  </style>
+</head>
+<body>
+  <div id="topbar">
+    <div class="border"></div>
+    <div class="menubar">
+      <table cellspacing="0" cellpadding="0" border="0" width="100%" class="headertable">
+        <tbody>
+          <tr>
+          <td align="left" id="topbar_account">
+              <a href="#" class="item">Create an account</a> 
+            | <a href="#" class="item">Sign in</a>
+            <span></span>
+          </td>
+          <td align="right">
+              <a href="#" class="item">about SPIE</a>
+            | <a href="#" class="item">contact us</a>
+            | <a href="#" class="item">help</a>
+            | <a href="#" class="item">shopping cart</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div id="page">
+    <div id="header">
+      <span>
+        <a href="#">
+          <img src="http://spie.org/images/wt_o/brand.jpg" border="0" alt="SPIE - The International Society of Optics and Photonics">
+        </a>
+      </span>
+      <span class="searchpos">
+        <form autocomplete="off" action="#" name="search">
+          <input id="searchtext" class="textfld" type="text" name="Ntt" value="" maxlength="256">
+          <span style="position:relative; top:-3px;">
+            <a class="searchbutton">SEARCH</a>
+          </span>
+          <input type="hidden" name="Dy" value="1">
+          <input type="hidden" name="Nty" value="1">
+          <input type="hidden" name="Nrpp" value="20">
+        </form>
+      </span>
+      <div id="nav">
+        <ul id="navmenu">
+        <li id="navhome" class="home">Home</li>
+        <li id="navconferences" class="conferences">Conferences + Exhibitions </li>
+        <li id="navpubs" class="pubs selected">Publications </li>
+        <li id="naveducation" class="education">Education </li>
+        <li id="navmember" class="member">Membership </li>
+        <li id="navindustry" class="industry">Industry Resources </li>
+        <li id="navcareercenter" class="careercenter">Career Center </li>
+        <li id="navnewsroom" class="newsroom">News + Videos </li>
+
+        </ul>
+        
+        <!--<span id="menudiv" class="navtext" style="visibility: hidden; top: 201px; left: 897px;">
+          <table cellpadding="0" cellspacing="0" border="0" id="navtable">
+            <tbody>
+              <tr valign="top">
+                <td>
+                  <ul>
+                    <li class="boldlink">SPIE.TV</li>
+                    <li style="margin-top:10px;">Astronomy</li>
+                    <li>Biomedical Optics &amp; Medical Imaging</li>
+                    <li>Defense &amp; Security</li>
+                    <li>Electronic Imaging &amp; Signal Processing</li>
+                    <li>Illumination &amp; Displays</li>
+                    <li>Lasers &amp; Sources</li>
+                  </ul>
+                </td>
+                <td>
+                  <div><br></div>
+                  <ul>
+                    <li>Micro/Nano Lithography</li>
+                    <li style="margin-top:10px;">Nanotechnology</li>
+                    <li>Optical Design &amp; Engineering</li>
+                    <li>Optoelectronics &amp; Communications</li>
+                    <li>Remote Sensing</li>
+                    <li>Sensing &amp; Measurement</li>
+                    <li>Solar &amp; Alternative Energy</li>
+                  </ul>
+                  <ul>
+                    <li class="boldlink">Sign up for Newsroom E-Alerts</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </span>-->
+      </div>
+      <ul id="topnav">
+          <li>Conference Proceedings</li>
+          <li>Journals</li>
+          <li>SPIE Digital Library</li>
+          <li>Books</li>
+          <li>Collections</li>
+          <li>Open Access</li>
+          <li>Contact SPIE Publications</li>
+          <li class="optin">
+            <a href="#">
+               Subscribe to receive free New Titles Updates
+              </a>
+          </li>
+        </ul>
+      <table cellspacing="0" cellpadding="0" border="0" id="contenttable" width="800">
+        <tbody>
+          <tr>
+            <td valign="top" align="left" style="padding-top: 17px;">
+            <table cellpadding="0" cellspacing="0" border="0" height="100%">
+            <tbody>
+              <tr>
+                <!--BEGIN LEFT NAV-->
+                <td valign="top" width="4">
+                  <img src="http://spie.org/images/spacer.gif" width="4" height="4">
+                </td>
+                <td width="100%" valign="top">
+                  <span></span>
+                  <table width="696" id="jrightcolumn" height="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                      <tr>
+                        <td valign="top" width="472" class="centerCol">
+                          <a href="#" style="margin-left:12px;"></a>
+                          <div class="printEmail centerColElement">
+                            <a href="#" rel="nofollow">
+                              <img name="print" src="http://spie.org/images/global/btn_printpage_out.gif" width="25" height="25" border="0" alt="Print Page" class="btnPrint">
+                            </a>
+                            <a href="mailto:?subject=SPIE.org : Publications : Product Detail&amp;body=EMAIL BODY" onmouseover="document.email.src='http://spie.org/images/global/btn_emailpage_over.gif';" onmouseout="document.email.src='http://spie.org/images/global/btn_emailpage_out.gif';">
+                              <img name="email" src="http://spie.org/images/global/btn_emailpage_out.gif" width="25" height="25" border="0" alt="Email Page" title="Email Page">
+                            </a>
+                            <img src="http://spie.org/images/clear.gif" width="15" height="1">
+                            <a href="#">
+                              <img src="http://spie.org/images/global/addthisservice.gif" width="25" height="25" border="0" alt="">
+                            </a>
+                          </div>
+                          <div class="centerColElement">
+                            <div>
+                              <div style="float:left;">
+
+                                <!-- CHANGE ME TO CHANGE THE BOOK IMAGE -->
+                                <!-- DEFAULT: http://spie.org/Images/Graphics/VolumeCovers/PM229.jpg -->
+                                <img src="http://spie.org/Images/Graphics/VolumeCovers/PM229.jpg" width="168" height="240" alt="Stray Light Analysis and Control" title="Stray Light Analysis and Control" style="padding-right:10px;">
+                              </div>
+                            <div style="float:left; width:450px;">
+                              <div class="pubtype">
+                                          SPIE Press Book
+                                          <p></p>
+                              </div>
+                              <h1 class="title_Publications" style="margin:5px 0;">Stray Light Analysis and Control </h1>
+                            </div>
+                              <form method="get" action="#" id="frm1000980" name="frm1000980">
+                                <input type="hidden" id="fuseaction" name="fuseaction" value="cartadditem">
+                                <input type="hidden" id="product_id" name="product_id" value="1000980">
+                                <input type="hidden" id="redir" name="redir" value="x648.xml"><input type="hidden" id="ID" name="ID" value="x648">
+                                <input type="hidden" name="origin_id" id="origin_id" value="x646">
+                                <div class="publicationDesc" style="float:left; width:450px;">
+                                  <p>Author(s): <b><a href="http://spie.org/app/profiles/viewer.aspx?profile=BKRRRG">Eric Fest</a></b></p>
+
+                                          Published: <b>27 March 2013</b>;
+                                          228 pages;
+                                          Softcover<br>
+                                        ISBN: <b>9780819493255</b><br>
+                                    Volume: <b>PM229</b><br>
+                                </div>
+                                <p style="padding-top:7px; float:left; width:450px;">
+                                              Member: <b>$47.00</b><br>
+                                              Non-member: <b>$55.00</b>
+                                      </p>
+                                          <p style="padding-top:7px; float:left; width:450px;"><input type="hidden" name="format" id="format" value="Softcover">
+                                            <a class="button" href="#">Add to cart</a>
+                                        </p>
+                                <p></p>
+                              </form>
+                              <div style="clear:both; margin:10px 0; padding-top: 20px; border-bottom:1px solid #999;"></div>
+                              <div class="textBlock">
+                                <p>Stray light is defined as unwanted light in an optical system, a familiar concept for anyone who has taken a photograph with the sun in or near their camera's field of view. In a low-cost consumer camera, stray light may be only a minor annoyance, but in a space-based telescope, it can result in the loss of data worth millions of dollars. It is imperative that optical system designers understand its consequences on system performance and adapt the design process to control it.</p>
+
+                                <p>This book addresses stray light terminology, radiometry, and the physics of stray light mechanisms, such as surface roughness scatter and ghost reflections. The most-efficient ways of using stray light analysis software packages are included. The book also demonstrates how the basic principles are applied in the design, fabrication, and testing phases of optical system development.</p>
+                              </div>
+                              <div class="msg_list">
+                                <p class="msg_head">Preface <span class="arrow-up">&#9658;</span><span class="arrow-down">&#9660;</span></p>
+                                <div class="msg_body">
+                                  <p></p><dd><b>Preface</b></dd><p></p>
+                                  <p>In 1741, the great Swiss mathematician Leonhard Euler was asked by King Frederick the Great of Prussia to write a tutorial on natural philosophy and science for his niece, the Princess of Anhalt-Dessau. Euler agreed and began writing the tutorial as a series of letters to the Princess, about one a week, for nearly 250 weeks. These letters were eventually published as a collection and became some of the first popular science writing.</p>
+                                  <p>In a letter entitled "Precautions to be observed in the Construction of Telescopes" (shown in the second figure), Euler recommends that the Princess</p>
+                                  <p>". . . (enclose the telescope) in a tube, that no other rays, except those which are transmitted through the objective, may reach the other lenses. . . If by any accident the tube shall be perforated ever so slightly, the extraneous light would confound the representation of the object."</p>
+                                  <p>He also suggests that she "[. . . ]blacken, throughout, the inside of the telescope, of the deepest black possible, as it is well known that this colour reflects not the rays of light, be they ever so powerful."</p>
+                                  <p>Though he calls them "diaphragms" and not field stops, Euler goes on to suggest their use as a further means of "diminishing the unpleasant effect of which I have been speaking." This unpleasant effect is, of course, what we now call stray light, and this letter shows that it was identified as a problem hundreds of years ago. It is remarkable that the methods Euler discussed to control it (i.e., the use of black surface treatments, field stops, and baffles) are still some of the primary methods used to control it today (see Chapters 6, 8, and 9, respectively). Of course, some things have changed; Euler and the Princess didn't have the massive computing power we have today, and therefore were unable to predict the stray light performance of a telescope to the accuracy that is now possible. In addition, the occurrence of stray light in their telescope was an "unpleasant effect" and was not as serious a problem as, say, the loss of scientific data due to stray light in a multi-billion-dollar space-based telescope.</p>
+                                  <p>However, the letter shows that the problem and many of its solutions remain the same. The goal of Euler's letter and of this book are similar: <i>to provide optical engineers with the information and analytical tools necessary to design and build optical systems with sufficient stray light control</i>. In addition to Euler's letter, there have been hundreds of papers published on the subject, and it is impossible to include the content of all of them here. Therefore, only the content that is most applicable to the task of <i>optical system engineering</i> is discussed. This is an important distinction, as many previous publications deal with the science of optical scattering and stray light, but fewer address the application of this science in engineering practice. This book summarizes the important scientific results, providing references for more detailed study, and then applies these theories to the engineering of optical systems. This book also considers the <i>economics</i> of performing stray light analysis, which is a dimension that is also lacking in the current literature. Sometimes the engineer tasked with performing a stray light analysis has months of time and a large budget, and other times has 15 minutes and no budget. This book provides tools and solutions for a spectrum of budgets, and quantifies the accuracy associated with each approach.</p>
+                                  <p><i>Eric Fest<br>Tucson, AZ<br>February 2013</i></p>
+
+                                </div>
+                                <p class="msg_head">Document Preview <span class="arrow-up">&#9658;</span><span class="arrow-down">&#9660;</span></p>
+                                <div class="msg_body">
+                                  orem ipsum dolor sit amet, consectetuer adipiscing elit orem ipsum dolor sit amet, consectetuer adipiscing elit
+                                </div>
+                                <p class="msg_head">Table of Contents <span class="arrow-up">&#9658;</span><span class="arrow-down">&#9660;</span></p>
+                                <div class="msg_body">
+                                  <h3>Table of Contents</h3>
+                                  <p>
+                                  </p><dt><b>Chapter 1 Introduction and Terminology</b></dt>
+                                  <dd>1.1 Book Prerequities</dd>
+                                  <dd>1.2 Book Organization</dd>
+                                  <dd>1.3 Stray Light Terminology</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3.1 Stray light paths</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3.2 Specular and scatter stray light mechanisms</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3.3 Critical and illuminated surfaces</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3.4 In-field and out-of-field stray light</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3.5 Internal and external stray light</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3.6 "Move it or Block it or Paint/coat it or Clean it"</dd>
+                                  <dd>1.4 Summary</dd><p></p>
+                                  <p>
+                                  </p><dt><b>Chapter 2 Basic Radiometry for Stray Light Analysis</b></dt>
+                                  <dd>2.1 Radiometric Terms</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.1 Flux, or power, and radiometric versus
+                                  photometric units</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.2 Reflectance, transmittance, and absorption</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.3 Solid angle and projected solid angle</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.4 Radiance</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.5 Blackbody radiance</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.6 Throughput</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.7 Intensity</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.8 Exitance</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.9 Irradiance</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1.10 Bidirectional scattering distribution function</dd>
+                                  <dd>2.2 Radiative Transfer</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.1 Point source transmittance</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.2 Detector field of view</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.3 Veiling glare index</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.4 Exclusion angle</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.5 Estimation of stray light using basic radiative transfer</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2.6 Uncertainty of stray light estimates</dd>
+                                  <dd>2.3 Detector Responsivity</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3.1 Noise equivalent irradiance</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3.2 Noise equivalent delta temperature</dd>
+                                  <dd>2.4 Summary</dd><p></p>
+                                  <p>
+                                  </p><dt><b>Chapter 3 Basic Ray Tracing for Stray Light Analysis</b></dt>
+                                  <dd>3.1 Building the Stray Light Model</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.1 Defining optical and mechanical geometry</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1.2 Defining optical properties</dd>
+                                  <dd>3.2 Ray Tracing</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.1 Using ray statistics to quantify speed of convergence</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.2 Aiming scattered rays to increase the speed
+                                  of convergence</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.3 Backward ray tracing</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.4 Finding stray light paths using detector FOV</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.5 Determining critical and illuminated surfaces</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.6 Performing internal stray light calculations</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.7 Controlling ray ancestry to increase speed of convergence</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.8 Using Monte Carlo ray splitting increase speed of convergence</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.9 Calculating the effect of stray light on modulation transfer function</dd>
+                                  <dd>3.3 Summary</dd><p></p>
+                                  <p>
+                                  </p><dt><b>Chapter 4 Scattering from Optical Surface
+                                  Roughness and Coatings</b></dt>
+                                  <dd>4.1 Scattering from Uncoated Optical Surface Roughness</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1.1 BSDF from RMS surface roughness</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1.2 BSDF from PSD</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1.3 BSDF from empirical fits to measured data</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1.4 Artifacts from roughness scatter</dd>
+                                  <dd>4.2 Scattering from Coated Optical Surface Roughness</dd>
+                                  <dd>4.3 Scattering from Scratches and Digs</dd>
+                                  <dd>4.4 Summary</dd><p></p>
+                                  <p>
+                                  </p><dt><b>Chapter 5 Scattering from Particulate Contaminants</b></dt>
+                                  <dd>5.1 Scattering from Spherical Particles (Mie Scatter Theory)</dd>
+                                  <dd>5.2 Particle Density Function Models</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.1 The IEST CC1246D cleanliness standard</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.2 Measured (tabulated) distribution</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2.3 Determining the particle density function using typical
+                                  cleanliness levels, fallout rates, or direct measurement</dd>
+                                  <dd>5.3 BSDF Models</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.3.1 BSDF from PAC</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.3.2 BSDF from Mie scatter calculations</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.3.3 BSDF from empirical fits to measured data</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.3.4 Determining the uncertainty in BSDF from the
+                                  uncertainty in particle density function</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.3.5 Artifacts from contamination scatter</dd>
+                                  <dd>5.4 Comparison of Scatter from Contaminants and Scatter
+                                  from Surface Roughness</dd>
+                                  <dd>5.5 Scattering from Inclusions in Bulk Media</dd>
+                                  <dd>5.6 Molecular Contamination</dd>
+                                  <dd>5.7 Summary</dd><p></p>
+                                  <p>
+                                  </p><dt><b>Chapter 6 Scattering from Black Surface Treatments</b></dt>
+                                  <dd>6.1 Scattering from Black Surface Treatments</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.1 BRDF from empirical fits to measured data</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.2 Using published BRDF data</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.3 Artifacts from black surface treatment scatter</dd>
+                                  <dd>6.2 Selection Criteria for Black Surface Treatments</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.2.1 Absorption in the sensor waveband</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.2.2 Specularity at high AOIs</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.2.3 Particulate contamination</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.2.4 Molecular contamination</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.2.5 Conductivity</dd>
+                                  <dd>6.3 Types of Black Surface Treatments</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3.1 Appliques</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3.2 Treatments that reduce surface thickness</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3.3 Treatments that increase surface thickness</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3.3.1 Painting</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3.3.2 Fused powders</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3.3.3 Black oxide coatings</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3.3.4 Anodize</dd>
+                                  <dd>6.4 Survey of Widely Used Black Surface Treatments</dd>
+                                  <dd>6.5 Summary</dd><p></p>
+                                  <p>
+                                  </p><dt><b>Chapter 7 Ghost Reflections, Aperture Diffraction, and
+                                  Diffraction from Diffractive Optical Elements</b></dt>
+                                  <dd>7.1 Ghost Reflections</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1.1 Reflectance of uncoated and coated surfaces</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1.1.1 Uncoated surfaces</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1.1.2 Coated surfaces</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1.2 Reflectance from typical values</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1.3 Reflectance from the stack definition or predicted performance data</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1.4 Reflectance from measured data</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1.5 Artifacts from ghost reflections</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1.6 "Reflective" ghosts</dd>
+                                  <dd>7.2 Aperture Diffraction</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.2.1 Aperture diffraction theory</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.2.2 Calculation of aperture diffraction in stray light
+                                  analysis programs</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.2.3 Artifacts from aperture diffraction</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.2.4 Expressions for wide-angle diffraction calculations</dd>
+                                  <dd>7.3 Diffraction from Diffractive Optical Elements</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3.1 DOE diffraction theory</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3.2 Artifacts from DOE diffraction</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3.3 Scattering from DOE transition regions</dd>
+                                  <dd>7.4 Summary</dd><p></p>
+                                  <p>
+                                  </p><dt><b>Chapter 8 Optical Design for Stray Light Control</b></dt>
+                                  <dd>8.1 Use a Field Stop</dd>
+                                  <dd>8.2 Use an Unobscured Optical Design</dd>
+                                  <dd>8.3 Minimize the Number of Optical Elements between the Aperture Stop and the Focal Plane</dd>
+                                  <dd>8.4 Use a Lyot Stop</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.4.1 Calculating Lyot stop diameter from analytic
+                                  expressions</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.4.2 Calculating Lyot stop diameter from coherent
+                                  beam analysis</dd>
+                                  <dd>8.5 Use a Pupil Mask to Block Diffraction and Scattering
+                                  from Struts and Other Obscurations</dd>
+                                  <dd>8.6 Minimize Illumination of the Aperture Stop</dd>
+                                  <dd>8.7 Minimize the Number of Optical Elements, Especially
+                                  Refractive Elements</dd>
+                                  <dd>8.8 Avoid Optical Elements at Intermediate Images</dd>
+                                  <dd>8.9 Avoid Ghosts Focused at the Focal Plane</dd>
+                                  <dd>8.10 Minimize Vignetting, Including the Projected Solid Angle
+                                  of Struts</dd>
+                                  <dd>8.11 Use Temporal, Spectral, or Polarization Filters</dd>
+                                  <dd>8.12 Use Nonuniformity Compensation and Reflective Warm Shields in IR Systems</dd>
+                                  <dd>8.13 Summary</dd><p></p>
+                                  <p>
+                                  </p><dt><b>Chapter 9 Baffle and Cold Shield Design</b></dt>
+                                  <dd>9.1 Design of the Main Baffles and Cold Shields</dd>
+                                  <dd>9.2 Design of Vanes for Main Baffles and Cold Shields</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2.1 Optimal aperture diameter, depth, and spacing for baffle vanes</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2.2 Edge radius, bevel angle, and angle for baffle vanes</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.2.3 Groove-shaped baffle vanes</dd>
+                                  <dd>9.3 Design of Baffles for Cassegrain-Type Systems</dd>
+                                  <dd>9.4 Design of Reflective Baffle Vanes</dd>
+                                  <dd>9.5 Design of Masks</dd>
+                                  <dd>9.6 Summary</dd><p></p>
+                                  <p>
+                                  </p><dt><b>Chapter 10 Measurement of BSDF, TIS, and System
+                                  Stray Light</b></dt>
+                                  <dd>10.1 Measurement of BSDF (Scatterometers)</dd>
+                                  <dd>10.2 Measurement of TIS</dd>
+                                  <dd>10.3 Measurement of System Stray Light</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.3.1 Sensor radiometric calibration</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.3.2 Collimated source test</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.3.3 Extended source test</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.3.4 Solar tests</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.3.4.1 Using direct sunlight</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.3.4.2 Using a heliostat</dd>
+                                  <dd>10.4 Internal Stray Light Testing</dd>
+                                  <dd>10.5 Summary</dd><p></p>
+                                  <p>
+                                  </p><dt><b>Chapter 11 Stray Light Engineering Process</b></dt>
+                                  <dd>11.1 Define Stray Light Requirements</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11.1.1 Maximum allowed image plane irradiance and
+                                  exclusion angle</dd>
+                                  <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11.1.2 Inheritance of stray light requirements from
+                                  comparable systems</dd>
+                                  <dd>11.2 Design Optics, Pick Surface Roughness, Contamination
+                                  Levels, and Coatings</dd>
+                                  <dd>11.3 Build Stray Light Model, Add Baffles and Black Surface
+                                  Treatments</dd>
+                                  <dd>11.4 Compute Stray Light Performance</dd>
+                                  <dd>11.5 Build and Test</dd>
+                                  <dd>11.6 Process Completion</dd>
+                                  <dd>11.7 Summary</dd>
+                                  <dd>11.8 Guidelines and Rules of Thumb</dd><p></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td valign="top" width="4">
+                          <img src="http://spie.org/images/spacer.gif" width="4" height="4">
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="padding:1px 0 30px 0;">
+            <div id="pagefooter">
+              <div class="copyright">
+                Copyright © 
+                <script language="Javascript">
+                  var now = new Date();
+                  document.write(now.getFullYear());
+                </script>2013
+                SPIE
+              </div>
+              <div class="links">
+                <a href="#">About SPIE</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="#">Author Information</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="#">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="#">Sitemap</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="#" target="_blank">SPIEDigitalLibrary.org</a>
+              </div>
+              <ul>
+              <li><a href="#"><img src="http://spie.org/images/global/blog-icon-20.jpg" border="0"></a></li>
+              <li><a href="#"><img src="http://spie.org/images/global/facebook-icon-20.jpg" border="0"></a></li>
+              <li><a href="#"><img src="http://spie.org/images/global/linkedin-icon-20.jpg" border="0"></a></li>
+              <li><a href="#"><img src="http://spie.org/images/global/twitter-icon-20.jpg" border="0"></a></li>
+              <li><a href="#"><img src="http://spie.org/images/global/youTube-icon-20.jpg" border="0"></a></li>
+              <li><a href="#"><img src="http://spie.org/images/global/rss-icon-20.jpg" border="0"></a></li>
+              </ul>
+            </div>
+          </div>
+        </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+$(document).ready(function(){
+  $(".msg_body").hide();
+  $(".arrow-down").hide();
+  //toggle the componenet with class msg_body
+  $(".msg_head").click(function(){
+    $(this).next(".msg_body").slideToggle(600);
+    $(this).find(".arrow-up, .arrow-down").toggle();
+
+    $(".msg_head").each(function(){
+      $(this).removeClass("selectedBar");
+    });
+    $(this).addClass("selectedBar");
+
+  });
+  $(".msg_body").click(function(){
+    //$(this).slideToggle(600);
+  });
+  /*
+  var url = 'https://dl.dropboxusercontent.com/u/1190752/PM225.pdf';
+  PDFJS.disableWorker = true;
+
+  var pdfDoc = null,
+      pageNum = 1,
+      scale = 0.8,
+      canvas = document.getElementById('document'),
+      ctx = canvas.getContext('2d');
+
+  PDFJS.getDocument(url).then(function getPdfHelloWorld(_pdfDoc) {
+    pdfDoc = _pdfDoc;
+    $("#loading").hide();
+    $("#document").show();
+    renderPage(pageNum);
+  });*/
+});
+</script>
